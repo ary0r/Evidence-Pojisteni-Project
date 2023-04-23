@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Arena/.idea/Arena.iml" filepath="$PROJECT_DIR$/../Arena/.idea/Arena.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/projekt_beta.iml" filepath="$PROJECT_DIR$/.idea/projekt_beta.iml" />
+      <module fileurl="file://$USER_HOME$/OneDrive/Desktop/Py Projects/skoleni2204/.idea/skoleni2204.iml" filepath="$USER_HOME$/OneDrive/Desktop/Py Projects/skoleni2204/.idea/skoleni2204.iml" />
+      <module fileurl="file://$USER_HOME$/PycharmProjects/tryExcept/.idea/tryExcept.iml" filepath="$USER_HOME$/PycharmProjects/tryExcept/.idea/tryExcept.iml" />
+    </modules>
+  </component>
+</project>
