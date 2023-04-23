@@ -14,6 +14,7 @@ def save_database(openable, obj):
     try:
         with open(openable, "wb") as file:
             pickle.dump(obj, file)
+            print("Databáze uložena.")
     except Exception as error:
         print(error)
 
@@ -54,13 +55,6 @@ def main():
         # zadání požadované operace
         operation_number = get_number()
 
-        # pokusí se otevřít soubor pro načtení databáze, jinak vytvoří novou instanci
-        try:
-            with open(current_file, "rb") as file:
-                evidence = pickle.load(file)
-        except FileNotFoundError:
-            evidence = Database()
-
         # přidání klienta
         if operation_number == 1:
             new_client = Client(input("Zadej jméno klienta: "),
@@ -85,9 +79,18 @@ def main():
         # vymazání klienta
         elif operation_number == 4:
             evidence.enumerate_database()
-            index = get_number(text="Zadej index klienta k vymazání: ")
-            evidence.delete_client(index)
-            save_database(current_file, evidence)
+            go = True
+            while go:
+                try:
+                    index = get_number(text="Zadej index klienta k vymazání: ")
+                    if 0 <= index <= evidence.database_length:
+                        evidence.delete_client(index)
+                        save_database(current_file, evidence)
+                        go = False
+                    else:
+                        print("Index mimo rozsah!")
+                except Exception as error_msg:
+                    print(error_msg)
 
         elif operation_number == 5:
             run = False
@@ -99,5 +102,14 @@ def main():
 
 # název souboru pro uložení objektu databáze
 current_file = "pojistenci.pkl"
+# pokusí se otevřít soubor pro načtení databáze, jinak vytvoří novou instanci
+try:
+    with open(current_file, "rb") as file:
+        evidence = pickle.load(file)
+        print("Databáze načtena.")
+except FileNotFoundError:
+    evidence = Database()
+    print("Nepodařilo se načíst databázi ze souboru.")
+
 if __name__ == "__main__":
     main()
