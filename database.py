@@ -28,8 +28,6 @@ class Database:
 
             if client.name == name and client.surname == surname:
                 print(client)
-            else:
-                pass
 
     # výpis klientů a jejich indexu
     def enumerate_database(self):
@@ -43,7 +41,7 @@ class Database:
         self.__list.pop(index)
         print("Klient úspěšně vymazán.")
 
-    #
+    # vlastnost - vrátí délku seznamu
     @property
     def database_length(self):
         return len(self.__list)

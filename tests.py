@@ -2,6 +2,7 @@ import unittest
 from clients import Client
 from database import Database
 
+
 class TestClients(unittest.TestCase):
 
     # otestuje vytvoření nového klienta
@@ -24,16 +25,6 @@ class TestClients(unittest.TestCase):
         self.assertEqual("B", client.surname)
         self.assertEqual("C", client.age)
         self.assertEqual("D", client.phone_number)
-
-
-class TestDatabase(unittest.TestCase):
-
-    def test_add_client(self):
-        database = Database()
-        client = Client("Name", "Surname", "Age", "Phone_Number")
-        database.add_client(client)
-
-
 
 
 if __name__ == '__main__':

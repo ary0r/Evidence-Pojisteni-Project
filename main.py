@@ -80,16 +80,17 @@ def main():
         elif operation_number == 4:
             evidence.enumerate_database()
             go = True
+            error_msg = "Index mimo rozsah!"
             while go:
                 try:
                     index = get_number(text="Zadej index klienta k vymazání: ")
-                    if 0 <= index == evidence.database_length:
+                    if 0 <= index <= evidence.database_length:
                         evidence.delete_client(index)
                         save_database(current_file, evidence)
                         go = False
                     else:
-                        print("Index mimo rozsah!")
-                except Exception as error_msg:
+                        print(error_msg)
+                except Exception:
                     print(error_msg)
 
         elif operation_number == 5:
