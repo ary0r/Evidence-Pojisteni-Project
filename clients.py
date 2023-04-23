@@ -24,3 +24,13 @@ class Client:
     @property
     def surname(self):
         return self._surname
+
+    # vlastnost - věk
+    @property
+    def age(self):
+        return self._age
+
+    # vlastnost - telefonní číslo
+    @property
+    def phone_number(self):
+        return self._phone_number

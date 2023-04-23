@@ -31,8 +31,8 @@ class Database:
     # výpis klientů a jejich indexu
     def enumerate_database(self):
 
-        for x, y in enumerate(self.__list):
-            print(x, y)
+        for index, client in enumerate(self.__list):
+            print(index, client)
 
     # vymazání klienta dle indexu
     def delete_client(self, index):
