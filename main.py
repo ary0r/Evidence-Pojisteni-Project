@@ -83,7 +83,7 @@ def main():
             while go:
                 try:
                     index = get_number(text="Zadej index klienta k vymazání: ")
-                    if 0 <= index <= evidence.database_length:
+                    if 0 <= index == evidence.database_length:
                         evidence.delete_client(index)
                         save_database(current_file, evidence)
                         go = False
