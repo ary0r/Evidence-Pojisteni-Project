@@ -26,6 +26,17 @@ class TestClients(unittest.TestCase):
         self.assertEqual("C", client.age)
         self.assertEqual("D", client.phone_number)
 
+    # otestuje přidání klientů do databáze
+    def test_add_client(self):
+        database = Database()
+        for each in range(5):
+            client = Client("A", "B", "C", "D")
+            database.add_client(client)
+        self.assertEqual(5, database.database_length)
+
+    """
+    Napsat test na mazani databaze s pomoci len() a for!!
+    """
 
 if __name__ == '__main__':
     unittest.main()
