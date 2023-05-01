@@ -12,8 +12,8 @@ def clear():
 # uloží databázi do souboru
 def save_database(openable, obj):
     try:
-        with open(openable, "wb") as file:
-            pickle.dump(obj, file)
+        with open(openable, "wb") as saving_file:
+            pickle.dump(obj, saving_file)
             print("Databáze uložena.")
     except Exception as error:
         print(error)
@@ -47,7 +47,7 @@ def main():
               "1 - Přidat pojištěného\n",
               "2 - Vypsat všechny pojištěné\n",
               "3 - Vyhledat pojištěného\n",
-              "4 - Vymazat pojištěnce\n",
+              "4 - Vymazat pojištěného\n",
               "5 - Ukončit aplikaci\n",
               "------------------------"
               )

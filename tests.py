@@ -34,9 +34,19 @@ class TestClients(unittest.TestCase):
             database.add_client(client)
         self.assertEqual(5, database.database_length)
 
-    """
-    Napsat test na mazani databaze s pomoci len() a for!!
-    """
+    # testuje vymazání klienta
+    def test_delete_client(self):
+        database = Database()
+        for each in range(5):
+            client = Client("A", "B", "C", "D")
+            database.add_client(client)
+        self.assertEqual(5, database.database_length)
+        for each in range(3):
+            index = 0
+            database.delete_client(index)
+            index += 1
+        self.assertEqual(2, database.database_length)
+
 
 if __name__ == '__main__':
     unittest.main()
